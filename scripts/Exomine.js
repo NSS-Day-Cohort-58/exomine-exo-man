@@ -1,5 +1,5 @@
-import { Facilities } from "./Facilities"
-import { Governors } from "./Governors"
+import { Facilities } from "./Facilities.js"
+import { Governors } from "./Governors.js"
 
 
 
