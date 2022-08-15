@@ -109,6 +109,7 @@ export const getMinerals = () => {
 }
 
 export const purchaseMineral = () => {
+
     const mineralOrder = { ...database.transientState }
     const lastIndex = database.purchases.length - 1
     mineralOrder.id = database.purchases[lastIndex].id + 1
@@ -117,5 +118,6 @@ export const purchaseMineral = () => {
     // Broadcast custom event to entire document so that the
     // application can re-render and update state
     document.dispatchEvent(new CustomEvent("stateChanged"))
+
 }
 
