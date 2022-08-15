@@ -1,3 +1,5 @@
+import { Facilities } from "./Facilities"
+import { Governors } from "./Governors"
 
 
 
@@ -17,10 +19,10 @@ export const Exomine = () => {
 
         <article class="choices">
             <section class="choices__governors options">
-              
+              ${Governors()}
             </section>
             <section class="choices__facilities options">
-                
+              ${Facilities()}  
             </section>
             
         </article>
