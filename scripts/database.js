@@ -50,18 +50,18 @@ const database = {
         { id: 14, name: "Tycho Station" },
         ],
     },
-    facilities: {
-        jovian: [{ id: 1, name: "Callisto", active: true },
+    facilities: [
+        { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
         { id: 3, name: "Ganymede", active: true },
-        { id: 4, name: "Io", active: true },],
-        saturnian: [{ id: 5, name: "Rhea", active: true },
+        { id: 4, name: "Io", active: true },
+        { id: 5, name: "Rhea", active: true },
         { id: 6, name: "Phoebe", active: true },
         { id: 7, name: "Titan", active: false },
-        { id: 8, name: "Iapetus", active: true },],
-        uranian: { id: 9, name: "Titania", active: false },
-        neptunian: { id: 10, name: "Triton", active: true },
-    },
+        { id: 8, name: "Iapetus", active: true },,
+        { id: 9, name: "Titania", active: false },
+        { id: 10, name: "Triton", active: true },
+    ],
     purchases: {},
 } //facilities, colonies, colonyMinerals, minedMinerals, governors, minerals, transientState
 
@@ -90,7 +90,7 @@ export const setMineral = (mineralId) => {
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const getFacilities = () => {
-    return database.facilities.map(f => ({ ...f }))
+    return database.facilities.map(facility => ({ ...facility }))
 }
 export const getColonies = () => {
     return database.colonies.map(colony => ({ ...colony }))
