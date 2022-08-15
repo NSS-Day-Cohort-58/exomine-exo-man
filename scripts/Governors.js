@@ -19,7 +19,10 @@ export const Governors = () => {
     
     const arrayOfOptions = governors.map(
         (governor) => {
-            return `<option value="${governor.id}">${governor.name}</option>`
+            if (governor.active === true) {
+                return `<option value="${governor.id}">${governor.name}</option>`
+            }
+            
         }
     )
     html += arrayOfOptions.join("")
