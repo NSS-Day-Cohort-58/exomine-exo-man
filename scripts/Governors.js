@@ -1,5 +1,6 @@
 import { getGovernors, setGovernor } from "./database.js"
 
+
 const governors = getGovernors()
 
 document.addEventListener(
@@ -7,6 +8,7 @@ document.addEventListener(
     (changeEvent) => {
         if (changeEvent.target.id === "governor") {
             setGovernor(parseInt(changeEvent.target.value))
+
         }
     }
 )
@@ -16,13 +18,11 @@ export const Governors = () => {
 
     html += '<select id="governor">'
     html += '<option value="0">Select a Governor</option>'
-    
     const arrayOfOptions = governors.map(
         (governor) => {
             if (governor.active === true) {
                 return `<option value="${governor.id}">${governor.name}</option>`
             }
-            
         }
     )
     html += arrayOfOptions.join("")
