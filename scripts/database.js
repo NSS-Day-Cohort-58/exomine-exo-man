@@ -31,10 +31,33 @@ const database = {
             { id: 14, active: true, name: "Julietta A. Mao", colonyId: 12 },
 
         ],
-    minedMinerals: {},
+    minedMinerals: [
+        { id: 1, facilityId: 1, mineralId: 4, amount: 70 },
+        { id: 2, facilityId: 1, mineralId: 5, amount: 38 },
+        { id: 3, facilityId: 1, mineralId: 8, amount: 120 },
+        { id: 4, facilityId: 2, mineralId: 2, amount: 40 },
+        { id: 5, facilityId: 2, mineralId: 9, amount: 90 },
+        { id: 6, facilityId: 3, mineralId: 1, amount: 145 },
+        { id: 7, facilityId: 3, mineralId: 4, amount: 60 },
+        { id: 8, facilityId: 3, mineralId: 6, amount: 30 },
+        { id: 9, facilityId: 4, mineralId: 1, amount: 15},
+        { id: 10, facilityId: 4, mineralId: 5, amount: 100},
+        { id: 11, facilityId: 5, mineralId: 10, amount: 300},
+        { id: 12, facilityId: 6, mineralId: 1, amount: 80 },
+        { id: 13, facilityId: 6, mineralId: 4, amount: 34 },
+        { id: 14, facilityId: 6, mineralId: 8, amount: 67 },
+        { id: 15, facilityId: 7, mineralId: 5, amount: 25 },
+        { id: 16, facilityId: 7, mineralId: 3, amount: 18 },
+        { id: 17, facilityId: 7, mineralId: 7, amount: 190 },
+        { id: 18, facilityId: 8, mineralId: 10, amount: 230 },
+        { id: 19, facilityId: 9, mineralId: 9, amount: 54 },
+        { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
+    ]
+,
+
     colonyMinerals: {},
-    colonies: {
-        earth: [{ id: 1, name: "United Nations", },
+    colonies: [
+    { id: 1, name: "United Nations", },
         { id: 2, name: "Luna", },
         { id: 3, name: "EMEA" },
         { id: 4, name: "APAC" },
@@ -49,7 +72,7 @@ const database = {
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
         ],
-    },
+
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
