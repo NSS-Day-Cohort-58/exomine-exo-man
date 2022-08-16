@@ -16,10 +16,12 @@ export const Facilities = () => {
 
     html += '<select id="facility">'
     html += '<option value="0">Select a Facility</option>'
-    
+
     const arrayOfOptions = facilities.map(
         (facility) => {
-            return `<option value="${facility.id}">${facility.name}</option>`
+            if (facility.active === true) {
+                return `<option value="${facility.id}">${facility.name}</option>`
+            }
         }
     )
     html += arrayOfOptions.join("")
