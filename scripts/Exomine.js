@@ -1,7 +1,8 @@
+import { setColony } from "./database.js"
 import { Facilities } from "./Facilities.js"
 import { Governors } from "./Governors.js"
-
-
+let theGoverors = Governors()
+let theColony = setColony()
 
 document.addEventListener(
     "click",
@@ -19,26 +20,29 @@ export const Exomine = () => {
 
         <article class="choices">
             <section class="choices__governors options">
-              ${Governors()}
+              ${theGoverors}
             </section>
-            <section class="choices__facilities options">
-              ${Facilities()}  
-            </section>
-            
-        </article>
-        <aside class="selected_minerals>
-        
-        </aside>
-        
-        <article class="facilityMinerals">
-    
-           
-            
-        </article>
+                <div id="Colony Name">
+                    I AM A COLONY NAMED:
+                    <p>{$theColony}</p>    
+                </div>
+        <section class="choices__facilities options">
+    ${Facilities()}  
+  </section>
+  
+</article>
+<aside class="selected_minerals>
 
-        <article>
-            <button id="orderButton">Purchase Mineral</button>
-            <button id="orderButton">Purchase All Minerals</button>
-        </article>
-    `
+</aside>
+
+<article class="facilityMinerals">
+
+ 
+  
+</article>
+
+<article>
+  <button id="orderButton">Purchase Mineral</button>
+  <button id="orderButton">Purchase All Minerals</button>
+</article>`
 }

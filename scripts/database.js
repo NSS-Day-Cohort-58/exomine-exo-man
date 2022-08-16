@@ -31,53 +31,10 @@ const database = {
             { id: 14, active: true, name: "Julietta A. Mao", colonyId: 12 },
 
         ],
-    minedMinerals: [
-        { id: 1, facilityId: 1, mineralId: 4, amount: 70 },
-        { id: 2, facilityId: 1, mineralId: 5, amount: 38 },
-        { id: 3, facilityId: 1, mineralId: 8, amount: 120 },
-        { id: 4, facilityId: 2, mineralId: 2, amount: 40 },
-        { id: 5, facilityId: 2, mineralId: 9, amount: 90 },
-        { id: 6, facilityId: 3, mineralId: 1, amount: 145 },
-        { id: 7, facilityId: 3, mineralId: 4, amount: 60 },
-        { id: 8, facilityId: 3, mineralId: 6, amount: 30 },
-        { id: 9, facilityId: 4, mineralId: 1, amount: 15},
-        { id: 10, facilityId: 4, mineralId: 5, amount: 100},
-        { id: 11, facilityId: 5, mineralId: 10, amount: 300},
-        { id: 12, facilityId: 6, mineralId: 1, amount: 80 },
-        { id: 13, facilityId: 6, mineralId: 4, amount: 34 },
-        { id: 14, facilityId: 6, mineralId: 8, amount: 67 },
-        { id: 15, facilityId: 7, mineralId: 5, amount: 25 },
-        { id: 16, facilityId: 7, mineralId: 3, amount: 18 },
-        { id: 17, facilityId: 7, mineralId: 7, amount: 190 },
-        { id: 18, facilityId: 8, mineralId: 10, amount: 230 },
-        { id: 19, facilityId: 9, mineralId: 9, amount: 54 },
-        { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
-        
-    ],
-    colonyMinerals: [
-        { id: 1, colonyId: 1, mineralId: },
-        { id: 2, colonyId: 1, mineralId: },
-        { id: 3, colonyId: 1, mineralId: },
-        { id: 4, colonyId: 2, mineralId: },
-        { id: 5, colonyId: 2, mineralId: },
-        { id: 6, colonyId: 2, mineralId: },
-        { id: 7, colonyId: , mineralId: },
-        { id: 8, colonyId: , mineralId: },
-        { id: 9, colonyId: , mineralId: },
-        { id: 10, colonyId: , mineralId: },
-        { id: 11, colonyId: , mineralId: },
-        { id: 12, colonyId: , mineralId: },
-        { id: 13, colonyId: , mineralId: },
-        { id: 14, colonyId: , mineralId: },
-        { id: 15, colonyId: , mineralId: },
-        { id: 16, colonyId: , mineralId: },
-        { id: 17, colonyId: , mineralId: },
-        { id: 18, colonyId: , mineralId: },
-
-
-    ],
-    colonies: [
-        { id: 1, name: "United Nations", },
+    minedMinerals: {},
+    colonyMinerals: {},
+    colonies: {
+        earth: [{ id: 1, name: "United Nations", },
         { id: 2, name: "Luna", },
         { id: 3, name: "EMEA" },
         { id: 4, name: "APAC" },
@@ -91,8 +48,8 @@ const database = {
         { id: 12, name: "Eros" },
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
-    ]
-
+        ],
+    },
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
@@ -106,40 +63,31 @@ const database = {
         { id: 10, name: "Triton", active: true },
     ],
     purchases: {},
-}/*   { id: 1, name: "Iron" },
-        { id: 2, name: "Chromium" },
-        { id: 3, name: "Molybdenum" },
-        { id: 4, name: "Ice" },
-        { id: 5, name: "Phosphorus" },
-        { id: 6, name: "Nickel" },
-        { id: 7, name: "Cobalt" },
-        { id: 8, name: "Gold" },
-        { id: 9, name: "Platinum" },
-        { id: 10, name: "Rhodium" },*/
+}
 
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    document.dispatchEvent(new CustomEvent("facilityChanged"))
 }
 export const setColony = (colonyId) => {
     database.transientState.selectedColony = colonyId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    document.dispatchEvent(new CustomEvent("colonyChanged"))
 }
 export const setColonyMineral = (colonyMineralId) => {
     database.transientState.selectedColonyMineral = colonyMineralId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    document.dispatchEvent(new CustomEvent("colonyMineralChanged"))
 }
 export const setMinedMineral = (minedMineralId) => {
     database.transientState.selectedMinedMineral = minedMineralId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    document.dispatchEvent(new CustomEvent("minedMineralChanged"))
 }
 export const setGovernor = (governorId) => {
     database.transientState.selectedGovernor = governorId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    document.dispatchEvent(new CustomEvent("governorChanged"))
 }
 export const setMineral = (mineralId) => {
     database.transientState.selectedMineral = mineralId
-    document.dispatchEvent(new CustomEvent("stateChanged"))
+    document.dispatchEvent(new CustomEvent("mineralChanged"))
 }
 export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
