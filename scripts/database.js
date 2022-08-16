@@ -54,9 +54,10 @@ const database = {
         { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
     ]
 ,
+
     colonyMinerals: {},
     colonies: [
-        { id: 1, name: "United Nations", },
+    { id: 1, name: "United Nations", },
         { id: 2, name: "Luna", },
         { id: 3, name: "EMEA" },
         { id: 4, name: "APAC" },
@@ -71,7 +72,7 @@ const database = {
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
         ],
-    
+
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
