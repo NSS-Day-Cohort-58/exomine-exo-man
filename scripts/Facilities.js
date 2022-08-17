@@ -7,6 +7,7 @@ document.addEventListener(
     (changeEvent) => {
         if (changeEvent.target.id === "facility") {
             setFacility(parseInt(changeEvent.target.value))
+            
         }
     }
 )
