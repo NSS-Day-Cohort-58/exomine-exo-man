@@ -1,4 +1,4 @@
-import { getMinerals, setMineral } from "./database.js"
+import { getMinerals, setMineral,  } from "./database.js"
 
 const minerals = getMinerals()
 
@@ -7,10 +7,11 @@ document.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "mineral") {
-            setSize(parseInt(event.target.value))
+            setMineral(parseInt(event.target.value))
         }
     }
 )
+
 /*
 minerals takes facility for a parameter
 */

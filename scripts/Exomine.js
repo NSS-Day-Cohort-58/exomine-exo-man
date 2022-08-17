@@ -1,8 +1,8 @@
-import { setColony } from "./database.js"
+
 import { Facilities } from "./Facilities.js"
 import { Governors } from "./Governors.js"
-let theGoverors = Governors()
-let theColony = setColony()
+let theGovernors = Governors()
+let theColony = "Colony"
 
 document.addEventListener(
     "click",
@@ -20,11 +20,10 @@ export const Exomine = () => {
 
         <article class="choices">
             <section class="choices__governors options">
-              ${theGoverors}
+              ${theGovernors}
             </section>
                 <div id="Colony Name">
-                    I AM A COLONY NAMED:
-                    <p>{$theColony}</p>    
+                    <p><h2>${theColony} Minerals</h2></p>    
                 </div>
         <section class="choices__facilities options">
     ${Facilities()}  
