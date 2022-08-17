@@ -53,7 +53,7 @@ const database = {
         { id: 19, facilityId: 9, mineralId: 9, amount: 54 },
         { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
     ]
-,
+    ,
     colonyMinerals: [
         { id: 1, colonyId: 1, mineralId: 3, amount: 20 },
         { id: 2, colonyId: 1, mineralId: 5, amount: 2 },
@@ -100,8 +100,8 @@ const database = {
         { id: 12, name: "Eros" },
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
-        ],
-    
+    ],
+
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
@@ -116,7 +116,9 @@ const database = {
     ],
     purchases: {},
 }
-
+export const getTransientState = () => {
+    return database.transientState
+}
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent(new CustomEvent("facilityChanged"))
