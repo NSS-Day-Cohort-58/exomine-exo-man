@@ -52,9 +52,7 @@ const database = {
         { id: 18, facilityId: 8, mineralId: 10, amount: 230 },
         { id: 19, facilityId: 9, mineralId: 9, amount: 54 },
         { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
-    ]
-    ,
-
+    ],
     colonyMinerals: {},
     colonies: [
         { id: 1, name: "United Nations", },
@@ -72,7 +70,6 @@ const database = {
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
     ],
-
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
@@ -129,6 +126,9 @@ export const getGovernors = () => {
 }
 export const getMinerals = () => {
     return database.minerals.map(mineral => ({ ...mineral }))
+}
+export const getTransientState = () => {
+    return database.transientState
 }
 
 export const purchaseMineral = () => {
