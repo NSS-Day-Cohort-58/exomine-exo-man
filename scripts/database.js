@@ -40,9 +40,9 @@ const database = {
         { id: 6, facilityId: 3, mineralId: 1, amount: 145 },
         { id: 7, facilityId: 3, mineralId: 4, amount: 60 },
         { id: 8, facilityId: 3, mineralId: 6, amount: 30 },
-        { id: 9, facilityId: 4, mineralId: 1, amount: 15},
-        { id: 10, facilityId: 4, mineralId: 5, amount: 100},
-        { id: 11, facilityId: 5, mineralId: 10, amount: 300},
+        { id: 9, facilityId: 4, mineralId: 1, amount: 15 },
+        { id: 10, facilityId: 4, mineralId: 5, amount: 100 },
+        { id: 11, facilityId: 5, mineralId: 10, amount: 300 },
         { id: 12, facilityId: 6, mineralId: 1, amount: 80 },
         { id: 13, facilityId: 6, mineralId: 4, amount: 34 },
         { id: 14, facilityId: 6, mineralId: 8, amount: 67 },
@@ -53,7 +53,7 @@ const database = {
         { id: 19, facilityId: 9, mineralId: 9, amount: 54 },
         { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
     ]
-,
+    ,
     colonyMinerals: [
         { id: 1, colonyId: 1, mineralId: 3, amount: 20 },
         { id: 2, colonyId: 1, mineralId: 5, amount: 2 },
@@ -100,8 +100,8 @@ const database = {
         { id: 12, name: "Eros" },
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
-        ],
-    
+    ],
+
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
@@ -116,9 +116,8 @@ const database = {
     ],
     purchases: {},
 }
-
 export const getTransientState = () => {
-    return transientState
+    return database.transientState
 }
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
