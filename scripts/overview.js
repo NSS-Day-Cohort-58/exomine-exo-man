@@ -12,6 +12,7 @@ Facilities function will check transientState to check for governorId
 & When governor is selected, choose facility opens
 
 ! Facilities Module
+
 TODO Facilites dropdown should NOT populate until a governor is selected
     ^ event listener watches transient state for governor,
     * then runs the dropdown function
