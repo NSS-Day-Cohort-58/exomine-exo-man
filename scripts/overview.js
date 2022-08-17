@@ -16,7 +16,7 @@ Import facilities from database
 Build dropdown of active facilities
 Filter out inactive facilities
 User chooses a facility to shop from
- 
+
 Chosen facility will provide radio buttons for mineral selection
 Import minerals for the selected facility from database
 Generate a list of each mineral and the quantity available for purchase. 
