@@ -40,9 +40,9 @@ const database = {
         { id: 6, facilityId: 3, mineralId: 1, amount: 145 },
         { id: 7, facilityId: 3, mineralId: 4, amount: 60 },
         { id: 8, facilityId: 3, mineralId: 6, amount: 30 },
-        { id: 9, facilityId: 4, mineralId: 1, amount: 15 },
-        { id: 10, facilityId: 4, mineralId: 5, amount: 100 },
-        { id: 11, facilityId: 5, mineralId: 10, amount: 300 },
+        { id: 9, facilityId: 4, mineralId: 1, amount: 15},
+        { id: 10, facilityId: 4, mineralId: 5, amount: 100},
+        { id: 11, facilityId: 5, mineralId: 10, amount: 300},
         { id: 12, facilityId: 6, mineralId: 1, amount: 80 },
         { id: 13, facilityId: 6, mineralId: 4, amount: 34 },
         { id: 14, facilityId: 6, mineralId: 8, amount: 67 },
@@ -53,9 +53,38 @@ const database = {
         { id: 19, facilityId: 9, mineralId: 9, amount: 54 },
         { id: 20, facilityId: 10, mineralId: 3, amount: 78 },
     ]
-    ,
+,
+    colonyMinerals: [
+        { id: 1, colonyId: 1, mineralId: 3, amount: 20 },
+        { id: 2, colonyId: 1, mineralId: 5, amount: 2 },
+        { id: 3, colonyId: 2, mineralId: 10, amount: 16 },
+        { id: 4, colonyId: 2, mineralId: 3, amount: 8 },
+        { id: 5, colonyId: 2, mineralId: 7, amount: 4 },
+        { id: 6, colonyId: 3, mineralId: 9, amount: 6 },
+        { id: 7, colonyId: 3, mineralId: 2, amount: 12 },
+        { id: 8, colonyId: 4, mineralId: 8, amount: 14 },
+        { id: 9, colonyId: 4, mineralId: 1, amount: 7 },
+        { id: 10, colonyId: 4, mineralId: 5, amount: 23 },
+        { id: 11, colonyId: 5, mineralId: 7, amount: 8 },
+        { id: 12, colonyId: 6, mineralId: 4, amount: 6 },
+        { id: 13, colonyId: 6, mineralId: 9, amount: 12 },
+        { id: 14, colonyId: 7, mineralId: 10, amount: 7 },
+        { id: 15, colonyId: 7, mineralId: 2, amount: 3 },
+        { id: 16, colonyId: 8, mineralId: 3, amount: 15 },
+        { id: 17, colonyId: 8, mineralId: 6, amount: 5 },
+        { id: 18, colonyId: 8, mineralId: 8, amount: 9 },
+        { id: 19, colonyId: 8, mineralId: 10, amount: 11 },
+        { id: 20, colonyId: 9, mineralId: 4, amount: 9 },
+        { id: 21, colonyId: 10, mineralId: 7, amount: 4 },
+        { id: 22, colonyId: 11, mineralId: 4, amount: 2 },
+        { id: 23, colonyId: 11, mineralId: 8, amount: 18 },
+        { id: 24, colonyId: 12, mineralId: 3, amount: 3 },
+        { id: 25, colonyId: 13, mineralId: 1, amount: 1 },
+        { id: 26, colonyId: 13, mineralId: 5, amount: 5 },
+        { id: 27, colonyId: 14, mineralId: 6, amount: 8 },
+        { id: 28, colonyId: 14, mineralId: 10, amount: 7 },
 
-    colonyMinerals: {},
+    ],
     colonies: [
         { id: 1, name: "United Nations", },
         { id: 2, name: "Luna", },
@@ -71,8 +100,8 @@ const database = {
         { id: 12, name: "Eros" },
         { id: 13, name: "Anderson Station" },
         { id: 14, name: "Tycho Station" },
-    ],
-
+        ],
+    
     facilities: [
         { id: 1, name: "Callisto", active: true },
         { id: 2, name: "Europa", active: false },
@@ -88,6 +117,9 @@ const database = {
     purchases: {},
 }
 
+export const getTransientState = () => {
+    return transientState
+}
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent(new CustomEvent("facilityChanged"))
