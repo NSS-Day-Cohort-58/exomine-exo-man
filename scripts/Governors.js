@@ -1,9 +1,7 @@
-import { Colonies } from "./Colonies.js"
 import { getGovernors, setGovernor } from "./database.js"
 
 
 const governors = getGovernors()
-
 
 document.addEventListener(
     "change",
