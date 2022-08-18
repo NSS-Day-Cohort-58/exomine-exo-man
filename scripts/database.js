@@ -114,7 +114,7 @@ const database = {
         { id: 9, name: "Titania", active: false },
         { id: 10, name: "Triton", active: true },
     ],
-    purchases: {},
+    
 }
 export const getTransientState = () => {
     return database.transientState
@@ -175,3 +175,6 @@ export const purchaseMineral = () => {
 
 }
 
+export const getPurchases = () => {
+    return database.purchases
+}
