@@ -2,6 +2,7 @@
 import { Colonies } from "./Colonies.js"
 import { Facilities } from "./Facilities.js"
 import { Governors } from "./Governors.js"
+import { Minerals } from "./Minerals.js"
 let theGovernors = Governors()
 
 
@@ -30,10 +31,10 @@ export const Exomine = () => {
                 ${Facilities()}  
             </section>
   
-        </article>
-        <aside class="selected_minerals>
-
-        </aside>
+</article>
+<aside class="selected_minerals">
+${Minerals()}
+</aside>
 
         <article class="facilityMinerals">
         </article>

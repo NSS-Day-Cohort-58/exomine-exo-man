@@ -1,7 +1,7 @@
-import { getMinerals, setMineral,  } from "./database.js"
-
+import { getMinedMinerals, getMinerals, getTransientState, setMineral, } from "./database.js"
+let transientState = getTransientState()
 const minerals = getMinerals()
-
+let minedMinerals = getMinedMinerals()
 
 document.addEventListener(
     "change",
@@ -12,6 +12,8 @@ document.addEventListener(
     }
 )
 
+
+
 /*
 minerals takes facility for a parameter
 */
@@ -20,10 +22,18 @@ export const Minerals = () => {
 
     // Use .map() for converting objects to <li> elements
     const listItems = minerals.map(
-        (mineral) => {
-            return `<li>
-                <input type="radio" name="mineral" value="${mineral.id}" /> ${mineral.name}
-            </li>`
+        (mineral) => { //* iterate database.minerals
+            if (transientState.selectedFacility) { //* if the user has selected a facility
+                for (const minedMineral of minedMinerals) { //* iterate database.minedMinerals
+                    if (minedMineral.facilityId === transientState.selectedFacility) { //? if the mineral came from the right facility
+                        if (minedMineral.mineralId === mineral.id) { //& if the mineral.id matches the mined mineral 
+                            html += `<li> //* then print out all the information gathered. 
+                                <input type="radio" name="mineral" value="${minedMineral.mineralId}" /> ${minedMineral.amount} tons of ${mineral.name}
+                            </li>`}
+                    }
+
+                }
+            }
         })
 
     html += listItems.join("")
