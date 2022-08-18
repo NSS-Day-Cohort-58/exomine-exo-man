@@ -1,16 +1,23 @@
 import { getColonies, getGovernors, getMinerals } from "./database.js"
 import { getTransientState } from "./database.js"
+<<<<<<< HEAD
+=======
 
+>>>>>>> main
 import { getColonyMinerals } from "./database.js"
 const colonies = getColonies()
 const governors = getGovernors()
 const minerals = getMinerals()
-const colonyMinerals = getColonyMinerals
+
 
 export const Colonies = () => {
     let html = ""
     const transientState = getTransientState()
+<<<<<<< HEAD
+    const colonyMinerals = getColonyMinerals()
+=======
     
+>>>>>>> main
     //get current transient state, check to see if the governor.colonyId in ts is equal to colony.id
     //return the headline with matching colony.name
     //if gov selected. if ts has gov, output colony name and any minerals purchased. 

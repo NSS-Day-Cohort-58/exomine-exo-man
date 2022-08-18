@@ -1,9 +1,11 @@
 
 import { Colonies } from "./Colonies.js"
+import { purchaseMineral } from "./database.js"
 import { Facilities } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 import { Minerals } from "./Minerals.js"
-let theGovernors = Governors()
+
+
 
 
 document.addEventListener(
@@ -11,7 +13,7 @@ document.addEventListener(
     (clickEvent) => {
         const itemClicked = clickEvent.target
         if (itemClicked.id.startsWith("orderButton")) {
-            addCustomOrder()
+            purchaseMineral()
         }
     }
 )
@@ -22,7 +24,7 @@ export const Exomine = () => {
 
         <article class="choices">
             <section class="choices__governors options">
-                ${theGovernors}
+                ${Governors()}
             </section>
             <section class="colony">
                 ${Colonies()}   
