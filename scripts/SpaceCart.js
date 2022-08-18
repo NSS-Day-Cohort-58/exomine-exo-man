@@ -1,32 +1,41 @@
-import { getTransientState, getFacilities, getMinerals } from "./database"
-const transientState = getTransientState()
+import { getTransientState, getFacilities, getMinerals } from "./database.js"
+let transientState = getTransientState()
 const facilities = getFacilities()
 const minerals = getMinerals()
 
-const cartFacility = () => {
-    if (transientState.selectedFacility) {
+const cartFacility = (transObj) => {
+    
+    if (transObj.selectedMineral) {
         for (const facility of facilities) {
-            if (facility.id === transientState.selectedFacility) {
-                return facility
+            if (facility.id === transObj.selectedFacility) {
+                return facility.name
             }
         }
     }
 }
-let foundFacility = cartFacility()
 
-const cartMineral = () => {
-    if (transientState.selectedMineral) {
+
+const cartMineral = (transObj) => {
+    
+    if (transObj.selectedMineral) {
         for (const mineral of minerals) {
-            if (transientState.selectedMineral === mineral.id) {
-                return mineral
+            if (transObj.selectedMineral === mineral.id) {
+                return mineral.name
             }
         }
     }
 }
-let foundMineral = cartMineral()
+
 
 export const SpaceCart = () => {
-    return `<div class="cart--${foundMineral.id}>1 ton of ${foundMineral.name} from ${foundFacility.name}</div>`
+    let html = ""
+    if (transientState.selectedMineral) {
+        let foundFacility = cartFacility(transientState)
+        let foundMineral = cartMineral(transientState)
+        html += `<div class="cart">1 ton of ${foundMineral} from ${foundFacility}</div>`
+
+    }
+    return html
 }
 //space cart module should
 //listen for a change in transientState.
