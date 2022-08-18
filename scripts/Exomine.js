@@ -1,5 +1,5 @@
 
-import { Colonies } from "./Colonies.js"
+import { Colonies, colonySupply } from "./Colonies.js"
 import { purchaseMineral } from "./database.js"
 import { Facilities } from "./Facilities.js"
 import { Governors } from "./Governors.js"
@@ -27,7 +27,8 @@ export const Exomine = () => {
                 ${Governors()}
             </section>
             <section class="colony">
-                ${Colonies()}   
+                ${Colonies()}
+                ${colonySupply()}   
             </section>   
             <section class="choices__facilities options">
                 ${Facilities()}  
