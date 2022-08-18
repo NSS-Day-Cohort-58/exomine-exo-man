@@ -166,7 +166,7 @@ export const getMinerals = () => {
 let colonyMinerals = getColonyMinerals()
 let minerals = getMinerals()
 let minedMinerals = getMinedMinerals()
-let transientState = getTransientState
+let transientState = getTransientState()
 export const purchaseMineral = () => {
 
     if (transientState.selectedMineral) {

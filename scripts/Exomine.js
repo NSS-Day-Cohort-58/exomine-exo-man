@@ -4,6 +4,7 @@ import { purchaseMineral } from "./database.js"
 import { Facilities } from "./Facilities.js"
 import { Governors } from "./Governors.js"
 import { Minerals } from "./Minerals.js"
+import { SpaceCart } from "./SpaceCart.js"
 
 
 
@@ -43,6 +44,8 @@ ${Minerals()}
         </article>
 
         <article>
+            <h2 class="header">Space Cart</h2>
+            ${SpaceCart()}
             <button id="orderButton">Purchase Mineral</button>
         
         </article>`
