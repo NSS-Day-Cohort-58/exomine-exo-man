@@ -1,4 +1,4 @@
-import { getGovernors, setGovernor } from "./database.js"
+import { getGovernors, setGovernor, setColony } from "./database.js"
 import { getTransientState } from "./database.js"
 let transientState = getTransientState()
 
@@ -22,7 +22,8 @@ export const Governors = () => {
         (governor) => {
             if (governor.active) {
                 if (transientState.selectedGovernor === governor.id) {
-                    return `<option selected value="${governor.id}">${governor.name}</option>`
+                    setColony(governor.colonyId)
+                    return `<option selected value="${governor.id}">${governor.name} </option>`
                 } else {
                     return `<option value="${governor.id}">${governor.name}</option>`
                 }
