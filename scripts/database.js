@@ -121,27 +121,27 @@ export const getTransientState = () => {
 }
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
-    document.dispatchEvent(new CustomEvent("facilityChanged"))
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setColony = (colonyId) => {
     database.transientState.selectedColony = colonyId
-    document.dispatchEvent(new CustomEvent("colonyChanged"))
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setColonyMineral = (colonyMineralId) => {
     database.transientState.selectedColonyMineral = colonyMineralId
-    document.dispatchEvent(new CustomEvent("colonyMineralChanged"))
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setMinedMineral = (minedMineralId) => {
     database.transientState.selectedMinedMineral = minedMineralId
-    document.dispatchEvent(new CustomEvent("minedMineralChanged"))
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setGovernor = (governorId) => {
     database.transientState.selectedGovernor = governorId
-    document.dispatchEvent(new CustomEvent("governorChanged"))
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setMineral = (mineralId) => {
     database.transientState.selectedMineral = mineralId
-    document.dispatchEvent(new CustomEvent("mineralChanged"))
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const getFacilities = () => {
     return database.facilities.map(facility => ({ ...facility }))
