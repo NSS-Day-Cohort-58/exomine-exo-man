@@ -1,5 +1,6 @@
 import { getGovernors, setGovernor } from "./database.js"
-
+import { getTransientState } from "./database.js"
+let transientState = getTransientState()
 
 const governors = getGovernors()
 
@@ -15,13 +16,16 @@ document.addEventListener(
 
 export const Governors = () => {
     let html = "<h2>Choose Governor</h2>"
-
     html += '<select id="governor">'
     html += '<option value="0">Select a Governor</option>'
     const arrayOfOptions = governors.map(
         (governor) => {
-            if (governor.active === true) {
-                return `<option value="${governor.id}">${governor.name}</option>`
+            if (governor.active) {
+                if (transientState.selectedGovernor === governor.id) {
+                    return `<option selected value="${governor.id}">${governor.name}</option>`
+                } else {
+                    return `<option value="${governor.id}">${governor.name}</option>`
+                }
             }
         }
     )

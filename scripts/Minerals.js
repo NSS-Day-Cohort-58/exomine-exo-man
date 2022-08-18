@@ -27,7 +27,8 @@ export const Minerals = () => {
                 for (const minedMineral of minedMinerals) { //* iterate database.minedMinerals
                     if (minedMineral.facilityId === transientState.selectedFacility) { //? if the mineral came from the right facility
                         if (minedMineral.mineralId === mineral.id) { //& if the mineral.id matches the mined mineral 
-                            html += `<li> //* then print out all the information gathered. 
+                            //* then print out all the information gathered.
+                            html += `<li>  
                                 <input type="radio" name="mineral" value="${minedMineral.mineralId}" /> ${minedMineral.amount} tons of ${mineral.name}
                             </li>`}
                     }
