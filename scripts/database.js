@@ -163,23 +163,36 @@ export const getMinerals = () => {
     return database.minerals.map(mineral => ({ ...mineral }))
 }
 
-let colonyMinerals = getColonyMinerals()
+
 let minerals = getMinerals()
 let minedMinerals = getMinedMinerals()
 let transientState = getTransientState()
+
 export const purchaseMineral = () => {
 
     if (transientState.selectedMineral) {
         for (const mineral of minerals) {
-            if (transientState.selectedMineral.id === mineral.id) {
-                for (let colonyMineral of colonyMinerals) {
+            if (transientState.selectedMineral === mineral.id) {
+                for (let colonyMineral of database.colonyMinerals) {
                     if (colonyMineral.mineralId === mineral.id) {
-                        colonyMineral.amount + 1
+                        if (colonyMineral.colonyId === transientState.selectedColony) {
+                            colonyMineral.amount++
+                        }
+                    } else {
+                        const lastIndex = database.colonyMinerals.length - 1
+                        let newOrder = database.colonyMinerals[lastIndex].id + 1
+                        let newColId = colonyMineral.colonyId
+                        let newMinId = mineral.id
+                        database.colonyMinerals.push({id: newOrder, colonyId: newColId , mineralId: newMinId, amount: 1 })
                     }
+                        
                 }
-                for (let minedMineral of minedMinerals) {
+                for (let minedMineral of database.minedMinerals) {
                     if (minedMineral.mineralId === mineral.id) {
-                        minedMineral.amount - 1
+                        if (minedMineral.mineralId === transientState.selectedColony) {
+                            minedMineral.amount--
+                        }
+                        
                     }
                 }
             }
