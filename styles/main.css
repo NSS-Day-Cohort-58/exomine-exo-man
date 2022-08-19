@@ -8,31 +8,101 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: "Comfortaa", Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.5;
+  color: #404040;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Patua One", serif;
   letter-spacing: 2px;
 }
 
 ul {
-    list-style-type: none;
-    padding-inline-start: 0.25rem;
+  list-style-type: none;
+  padding-inline-start: 0.25rem;
 }
 
 #orderButton {
-    margin: 1rem 0 2rem 2rem;
-    padding: 0.5rem;
-    background-color: rgb(227, 72, 72);
-    color: lightgoldenrodyellow;
-    font-size: 1rem;
+  margin: 1rem 0 2rem 2rem;
+  padding: 0.5rem;
+  background-color: rgb(227, 72, 72);
+  color: lightgoldenrodyellow;
+  font-size: 1rem;
 }
-.choices {
+
+
+
+.colony {
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
+  justify-content: space-around;
+  outline-offset: 0px;
+  width: 90%;
+  height: 200px;
+  border: 5px solid white;
+  padding: 5px;
+
+}
+
+.choices__governors {
+  display: flex;
+  justify-content: left;
+
+}
+
+.supply {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.choices__facilities {
+  display: flex;
+
+}
+
+#facility {
+  display: flex;
+}
+
+.facilityMinerals {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.selected_minerals {
+  display: flex;
+
+  justify-content: center;
+  outline: 3px dotted #A57C00;
+  outline-offset: 0px;
+  width: 60%;
+  height: 200px;
+  border: 5px solid white;
+  padding: 5px;
+
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+#SpaceCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: 3px dotted #A57C00;
+  width: 30%;
 }
