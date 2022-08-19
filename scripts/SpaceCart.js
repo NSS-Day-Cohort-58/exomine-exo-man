@@ -4,7 +4,7 @@ const facilities = getFacilities()
 const minerals = getMinerals()
 
 const cartFacility = (transObj) => {
-    
+
     if (transObj.selectedMineral) {
         for (const facility of facilities) {
             if (facility.id === transObj.selectedFacility) {
@@ -13,10 +13,10 @@ const cartFacility = (transObj) => {
         }
     }
 }
-
+//! MAKE THE PURCHASE MINERAL BUTTON DO SOMETHING.
 
 const cartMineral = (transObj) => {
-    
+
     if (transObj.selectedMineral) {
         for (const mineral of minerals) {
             if (transObj.selectedMineral === mineral.id) {
