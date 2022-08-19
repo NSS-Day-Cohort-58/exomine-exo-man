@@ -18,7 +18,7 @@ document.addEventListener(
 minerals takes facility for a parameter
 */
 export const Minerals = () => {
-    let html = "<ul>"
+    let html = "<ul> <h2> Facility Minerals: </h2> "
     // Use .map() for converting objects to <li> elements
     const listItems = minerals.map(
         (mineral) => { //* iterate database.minerals
@@ -27,7 +27,7 @@ export const Minerals = () => {
                     if (minedMineral.facilityId === transientState.selectedFacility) { //? if the mineral came from the right facility
                         if (minedMineral.mineralId === mineral.id) { //& if the mineral.id matches the mined mineral 
                             //* then print out all the information gathered.
-                            html += `<li> `
+                            html += `<li>`
 
                             //* then print out all the information gathered. 
                             if (transientState.selectedMineral === mineral.id) {
